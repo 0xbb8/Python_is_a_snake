@@ -1,0 +1,6 @@
+When Python imports a module for the first time, it translates its
+contents into a somewhat compiled shape. The file doesn't contain 
+machine code - it's internal Python semi-compiled code, ready to be 
+executed by Python's interpreter. As such a file doesn't require lots 
+of the checks needed for a pure source file, the execution starts faster, 
+and runs faster, too.

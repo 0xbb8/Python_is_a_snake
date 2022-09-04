@@ -1,0 +1,84 @@
+#!/bin/python3
+
+import socket,sys,datetime,math,threading,time
+
+banner = """
+__________________________________________________
+     ####             ###      ###       ######
+   ###  ###           ###      ###      ###  ###
+  ###    ###          ###      ###      ###  ###
+  ###    ###          #######  #######   ######
+  ###    ###  ##  ##  ### ###  ### ###  ###  ###
+   ###  ###     ##    ### ###  ### ###  ###  ###
+     ####     ##  ##  ######   ######    ######
+__________________________________________________
+"""
+print('\033[1m'+'\033[91m'+ banner + '\033[0m')
+valid = len(sys.argv) == 3 and int(sys.argv[2])>0 and int(sys.argv[2])<65536
+# list of threads
+threads = []
+
+# Making the banner pretty
+def banner_extra():
+    print('\033[95m'+'-'*50)
+    print('  Target: {}'.format(str(target)))
+    print('  Time: {}'.format(str(datetime.datetime.now())))
+    print('-'*50 + '\033[0m')
+
+# Acquirig target for enumeration
+def acquire_target(validation):
+    if validation:
+        try:
+            # Translates hostname to IPv4 if hostname is provided instead of an <ip>
+            global target
+            target = socket.gethostbyname(sys.argv[1])
+            scanning()
+        except Exception as e:
+            print(e)
+            print('\033[93m'+'Invalid <hostname/ip>. Exiting ... '+'\033[0m')
+            sys.exit()
+            #graceful exit
+    else:
+        print('\033[93m'+'Syntax@Error:~$./portscanner <hostname/ip> <max port>'+'\033[0m')
+
+# Getting the port status::
+def port_status(i):
+    for port in range(r[i],r[i+1]):
+        result = sock.connect_ex((target,port))#retrns error indicator
+        if result == 0:
+            print('\033[92m'+'Port {}: Open.'.format(str(port))+'\033[0m')
+        #else:
+            #print('\033[91m'+'Port {}: Closed.'.format(str(port))+'\033[0m')
+        #print(port)
+
+# Actual enumeration::Port Scanning
+def scanning():
+    banner_extra()
+    # Threading is to be done
+    # Run port scanning on multiple threads for streamlined scanning
+    global sock
+    sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+    #connection timeout
+    socket.setdefaulttimeout(3)
+    try:
+        global r,threads
+        m = int(sys.argv[2])/10
+        r = [math.ceil(m*x)+1 for x in range(0,11)]
+        for i in range(10):
+            print("thread: {}".format(str(i)))
+            th = threading.Thread(target=port_status(i))
+            th.daemon = True
+            threads.append(th)
+            #print(threads)
+        for i in range(10):
+            threads[i].start()
+        for i in range(10):
+            threads[i].join()
+            #port_status(i)
+    except Exception as e:
+            print(e)
+            print('\033[93m'+'Exiting ... '+'\033[0m')
+            sys.exit()
+
+# Here we go !!!
+acquire_target(valid)

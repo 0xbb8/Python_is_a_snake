@@ -1,0 +1,22 @@
+        !! Syntax and Semantics !!
+
+# print("Hello, World!")
+
+# function_name(arguements)
+
+When function is invoked in python, this is these are the steps that python takes:
+
+1) First checks the existance of the invoked function in it's data set.
+2) Checks the function's listed arguments meet the specifications of the function. 
+3) Leaves the code and gets in deep with the function with your provided arguements.
+4) Function executes with your arguements and gives a result.
+5) Returns back to your code and on to the next line it goes.
+
+## NOTE: It will give an error if any steps given above generate error.
+
+# There cannot be more than one instruction in a line.
+
+The way in which we are passing the arguments into the print() function is the most common in Python,
+and is called the positional way 
+(this name comes from the fact that the meaning of the argument is dictated by its position,
+e.g., the second argument will be outputted after the first, not the other way round).

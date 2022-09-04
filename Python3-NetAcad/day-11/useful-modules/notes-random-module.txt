@@ -1,0 +1,14 @@
+### If you want integer random values, one of the following functions would fit better:
+
+randrange(end)
+randrange(beg, end)
+randrange(beg, end, step)
+randint(left, right)
+
+### The first three invocations will generate an integer taken (pseudorandomly) from the range (respectively):
+
+range(end)
+range(beg, end)
+range(beg, end, step)
+
+### Note the implicit right-sided exclusion!

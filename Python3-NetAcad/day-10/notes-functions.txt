@@ -1,0 +1,26 @@
+Functions are used to optimize code.
+Making the code more modular.
+This makes programming and debugging easy.
+The process of making the code more modular by isolating the duplicate and complex
+lines of code is commonly referred to as "Decomposition"
+
+Decomposition is essential part of software development as the code can be divided
+and worked on by many programmers all at once.
+
+If you're going to divide the work among multiple programmers,
+decompose the problem to allow the product to be implemented 
+as a set of separately written functions packed together in different modules.
+
+See this website for python's built in function list:
+https://docs.python.org/3/library/functions.html
+
+### Parameterized functions ###
+-> parameters exist only inside functions in which they have been defined,
+   and the only place where the parameter can be defined is a space between
+   a pair of parentheses in the def statement;
+-> assigning a value to the parameter is done at the time of the function's
+   invocation, by specifying the corresponding argument.
+
+### Notes ###
+-> parameters live inside functions (this is their natural environment)
+-> arguments exist outside functions, and are carriers of values passed to corresponding parameters.

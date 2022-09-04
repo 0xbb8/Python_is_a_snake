@@ -1,0 +1,16 @@
+# ZeroDivisionError
+value = 1
+value /= 0
+
+# IndexError
+list = []
+x = list[0]
+# ValueError
+# TypeError
+# NameError
+
+### there are 63 built in exceptions in python 3. 
+This makes a weird upside down tree shaped hierarchy.
+### exceptions located around the top of the hierarchy are abstract and generalized
+whereas the exceptions around the bottoms part are concrete exceptions.
+

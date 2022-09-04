@@ -1,0 +1,17 @@
+[
+	print("Tell me anything...")
+	anything = input()
+	print("Hmm...", anything, "... Really?")
+]
+
+# The program prompts the user to input some data from the console 
+(most likely using a keyboard, although it is also possible to input data using voice or image);
+
+# the input() function is invoked without arguments (this is the simplest way of using the function); 
+the function will switch the console to input mode;
+you'll see a blinking cursor, and you'll be able to input some keystrokes, finishing off by hitting the Enter key;
+all the inputted data will be sent to your program through the function's result;
+
+# note: you need to assign the result to a variable; this is crucial - missing out this step will cause the entered data to be lost;
+
+# then we use the print() function to output the data we get, with some additional remarks.

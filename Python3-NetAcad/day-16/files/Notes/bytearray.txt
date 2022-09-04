@@ -1,0 +1,12 @@
+---
+bytearray - A class in python to handle streams of amorphous data i.e.Eg. bytes of an image
+---
+amorphous data: Data without any shape or form.
+---
+
+The object to handle such data should be explicitly instantiated. Such as using the constructor:
+
+data = bytearray(10)
+
+-> this creates an object that can handle 10 bytes
+-> The whole array is filled with zeros (0)

@@ -1,0 +1,9 @@
+A namespace is a space (understood in a non-physical context) in which some names exist
+and the names don't conflict with each other (i.e., there are not two different objects of the
+same name). We can say that each social group is a namespace - the group tends to name 
+each of its members in a unique way (e.g., parents won't give their children the same first names).
+
+If the module of a specified name exists and is accessible (a module is in fact a Python source file), 
+Python imports its contents, i.e., all the names defined in the module become known, but they don't enter your code's namespace.
+
+This means that you can have your own entities named sin or pi and they won't be affected by the import in any way.

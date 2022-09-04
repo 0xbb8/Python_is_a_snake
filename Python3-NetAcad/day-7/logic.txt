@@ -1,0 +1,32 @@
+# ' and ' operator : conjunction
+# Binary operator, lower priority than '+' '-' 
+
+Argument A	Argument B	A and B
+***************************************
+False	   *	False	    *	False
+False	   *	True	    *	False
+True	   *	False	    *	False
+True	   *	True	    *	True
+
+# ' or ' operator : disjunction
+# Binary operator, lower priority than 'and'
+
+Argument A	Argument B	A or B
+**************************************
+False	   *	False	    *	False
+False	   *	True	    *	True
+True	   *	False	    *	True
+True	   *	True	    *	True
+
+# ' not ' operator : logical negation
+# unary operator, higher priority as '+' '-'
+
+Argument	not Argument
+****************************
+False      *	True
+True	   *	False
+
+# De'Morgan's Law
+
+1) The negation of a conjunction is the disjunction of the negations.
+2) The negation of a disjunction is the conjunction of the negations.

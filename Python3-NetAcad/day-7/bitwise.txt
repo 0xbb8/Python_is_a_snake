@@ -1,0 +1,38 @@
+& (ampersand) - bitwise conjunction;
+| (bar) - bitwise disjunction;
+~ (tilde) - bitwise negation;
+^ (caret) - bitwise exclusive or (xor).
+
+# '&', '|' and '^' operators
+
+Arg A	Arg B	Arg B & Arg B	Arg A | Arg B	Arg A ^ Arg B
+0	0	0		0		0
+0	1	0		1		1
+1	0	0		1		1
+1	1	1		1		0
+
+# '~' operator
+
+Arg	~Arg
+0	1
+1	0
+
+& requires exactly two 1s to provide 1 as the result;
+| requires at least one 1 to provide 1 as the result;
+^ requires exactly one 1 to provide 1 as the result.
+
+######################################################################################################
+
+You can use bitwise operators to manipulate single bits of data. The following sample data:
+
+x = 15, which is 0000 1111 in binary,
+y = 16, which is 0001 0000 in binary.
+will be used to illustrate the meaning of bitwise operators in Python. Analyze the examples below:
+
+& does a bitwise and, e.g., x & y = 0, which is 0000 0000 in binary,
+| does a bitwise or, e.g., x | y = 31, which is 0001 1111 in binary,
+˜ does a bitwise not, e.g., ˜ x = 240, which is 1111 0000 in binary,
+^ does a bitwise xor, e.g., x ^ y = 31, which is 0001 1111 in binary,
+>> does a bitwise right shift, e.g., y >> 1 = 8, which is 0000 1000 in binary,
+<< does a bitwise left shift, e.g., y << 3 = , which is 1000 0000 in binary,
+
